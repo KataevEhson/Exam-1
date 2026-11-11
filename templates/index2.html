@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="cust_name" placeholder="Введите ваше имя ">
+    <input type="number" name="book" placeholder="Введите id книги">
+    <input type="text" name="time" placeholder="введите время когда вы хотите принести нашу книгу но пожалейста не обманываете 😊">
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>
