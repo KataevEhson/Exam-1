@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Библиотека</title>
+         <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        <div class="div4">
+             <a class="a2" href="/authors">Авторы</a>
+             <a class="a2" href="/show_books">Книги</a>
+            <a class="a2" href="/show_orders">Мои заказы</a>
+         </div>
+         <div class="div2 div5">
+              <form method="post">
+                {% csrf_token %}
+                  <input class="i1" name="name" value="{{ avtor.name }}" required>
+                    <input class="i1" type="number" name="age" value="{{ avtor.age }}" required>
+                  <button class="b2">Сохранить</button>
+            </form>
+            <button class="b1"><a href="/authors">Отмена</a></button>
+        </div>
+       </body>
+</html>

@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ author.name }}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<nav>
+    <a href="/authors">Авторы</a>
+    <a href="/show_books">Книги</a>
+    <a href="/show_orders">Мои заказы</a>
+</nav>
+<div class="spisok">
+<div class="kartochka">
+    <h2>{{ author.name }}</h2>
+     <p>Возраст: {{ author.age }}</p>
+     <p>Время добавления: {{ author.created_at }}</p>
+    <button class="nazad"><a href="/authors">Назад</a></button>
+      <button class="zakaz"><a href="/add_order">Заказать</a></button>
+    <button class="izmenit"><a href="/edit_author/{{ author.id }}/">Изменить</a></button>
+    <form method="post">
+         {% csrf_token %}
+            <button class="udalit">Удалить</button>
+        </form>
+</div>
+</div>
+</body>
+</html>

@@ -1,21 +1,27 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static "style.css" %}">
-    <title>Document</title>
-</head>
-<body>
-    
-   {% for dish in dishes %}
-   <div>
-    <h2>{{books.name}}</h2>
-   </div>
-   
-   {% endfor %} 
-
-
-</body>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <title>Библиотека</title>
+    </head>
+    <body>
+        <div class="div4">
+             <a class="a2" href="/authors">Авторы</a>
+            <a class="a2" href="/show_books">Книги</a>
+            <a class="a2" href="/show_orders">Мои заказы</a>
+        </div>
+        <p class="div3"><a class="a1" href="/add_book">Добавить книгу</a></p>
+        <div class="div1">
+            {% for book in books %}
+                <div class="div2">
+                    <img src="/media/{{ book.picture }}">
+                    <h2>{{ book.name }}</h2>
+                    <p><a class="a1" href="/book/{{ book.id }}/">Подробнее</a></p>
+                </div>
+            {% endfor %}
+        </div>
+    </body>
 </html>

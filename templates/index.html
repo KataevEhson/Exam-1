@@ -1,21 +1,23 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <title>Document</title>
-</head>
-<body>
-    
-<form method="POST">
-    {% csrf_token %}
-    <input type="text" name="name" placeholder="введите имя Автора">
-    <input type="number" name="age" placeholder="Введите возраст автора">
-    <button type="submit">Save</button>
-
-</form>
-
-</body>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+         <title>Библиотека</title>
+    </head>
+     <body>
+        <div class="div4">
+             <a class="a2" href="/authors">Авторы</a>
+             <a class="a2" href="/show_books">Книга</a>
+            <a class="a2" href="/show_orders">Мои заказы</a>
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            <input class="i1" type="text" name="name" placeholder="введите имя Автора">
+            <input class="i1" type="number" name="age" placeholder="Введите возраст автора">
+            <button class="b4" type="submit">Сохранить</button>
+        </form>
+    </body>
 </html>

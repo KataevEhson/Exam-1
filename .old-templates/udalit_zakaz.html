@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Библиотека</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<nav>
+    <a href="/authors">Авторы</a>
+    <a href="/show_books">Книги</a>
+    <a href="/show_orders">Мои заказы</a>
+</nav>
+<div class="spisok"><div class="kartochka">
+    <p>Удалить заказ?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button class="udalit">Удалить</button>
+    </form>
+    <button class="nazad"><a href="/show_orders">Отмена</a></button>
+</div></div>
+</body>
+</html>

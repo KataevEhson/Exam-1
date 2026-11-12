@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <title>Заказ {{ order.id }}</title>
+    </head>
+    <body>
+        <div class="div4">
+             <a class="a2" href="/authors">Авторы</a>
+            <a class="a2" href="/show_books">Книги</a>
+            <a class="a2" href="/show_orders">Мои заказы</a>
+        </div>
+        <div class="div1">
+            <div class="div2 div5">
+                <h2>{{order.cust_name}}</h2>
+                <p>Книга: {{order.book.name}}</p>
+                <p>Время возвразение: {{order.time}}</p>
+                <p>Дата создания: {{order.created_at}}</p>
+                <button class="b1"><a href="/show_orders">Назад</a></button>
+                <button class="b2"><a href="/show_books">Изменитъ</a></button>
+                <button class="b2"><a href="/show_books">Удалить</a></button>
+            </div>
+        </div>
+    </body>
+</html>

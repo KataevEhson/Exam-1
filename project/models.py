@@ -12,6 +12,7 @@ class Author(models.Model):
 class Books(models.Model):
     name = models.CharField()
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    picture = models.ImageField(upload_to='images/')
     created_at = models.DateField(default=datetime.now)
     status = models.BooleanField(default=False)
 

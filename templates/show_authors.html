@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <title>Библиотека</title>
+    </head>
+    <body>
+        <div class="div4">
+             <a class="a2" href="/authors">Авторы</a>
+            <a class="a2" href="/show_books">Книги</a>
+            <a class="a2" href="/show_orders">Мои заказы</a>
+        </div>
+        <p class="div3"><a class="a1" href="/">Добавить автора</a></p>
+        <div class="div1">
+            {% for author in authors %}
+                <div class="div2">
+                    <h2>{{ author.name }}</h2>
+                    <h2>{{ author.age }}</h2>
+                    <p><a class="a1" href="/authors/{{ author.id }}/">Подробнее</a></p>
+                </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>
